@@ -338,6 +338,7 @@ EOT
 # GRUB
 grub-install --target=i386-pc --recheck "$TARGET_DISK"
 grub-mkconfig -o /boot/grub/grub.cfg
+grub-install "$TARGET_DISK"
 
 # =============================================================================
 # DOWNLOAD SELECTED CATEGORIES OF PENTEST TOOLS
