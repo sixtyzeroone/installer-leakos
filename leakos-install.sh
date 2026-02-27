@@ -335,6 +335,27 @@ proc                /proc           proc    defaults        0       0
 sysfs               /sys            sysfs   defaults        0       0
 EOT
 
+# =============================================================================
+# /etc/hosts - SIMPLE VERSION
+# =============================================================================
+cat > /etc/hosts <<EOT
+# Simple /etc/hosts for LeakOS
+# Generated during installation
+
+127.0.0.1   localhost
+127.0.1.1   $HOSTNAME $HOSTNAME.localdomain
+
+# IPv6 loopback (standard)
+::1         localhost ip6-localhost ip6-loopback
+
+fe00::0     ip6-localnet
+ff00::0     ip6-mcastprefix
+ff02::1     ip6-allnodes
+ff02::2     ip6-allrouters
+EOT
+
+echo "/etc/hosts configured"
+
 # GRUB
 grub-install --target=i386-pc --recheck "$TARGET_DISK"
 grub-mkconfig -o /boot/grub/grub.cfg
