@@ -367,8 +367,7 @@ grub-install "$TARGET_DISK"
 if [ \${#SELECTED_CATEGORIES[@]} -gt 0 ]; then
     echo "Downloading pentest tools from selected categories..."
 
-    mkdir -p /opt/pentest-tools
-    cd /opt/pentest-tools
+    cd /usr/share
 
     for cat in "\${SELECTED_CATEGORIES[@]}"; do
         case \$cat in
