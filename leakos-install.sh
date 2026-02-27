@@ -237,7 +237,7 @@ mkdir -p /mnt/leakos/boot
 cp -v /boot/vmlinuz* /mnt/leakos/boot/ 2>/dev/null || true
 cp -v /boot/initrd* /mnt/leakos/boot/ 2>/dev/null || true
 cp -v /boot/System.map* /mnt/leakos/boot/ 2>/dev/null || true
-#cp -v /boot/initramfs* /mnt/leakos/boot/ 2>/dev/null || true
+
 
 if ! ls /mnt/leakos/boot/vmlinuz* >/dev/null 2>&1; then
     echo "WARNING: No kernel found in /mnt/leakos/boot!"
@@ -316,7 +316,7 @@ echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel 2>/dev/null || true
 # Locale
 echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 echo "id_ID.UTF-8 UTF-8" >> /etc/locale.gen
-#locale-gen
+
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 # Keyboard
@@ -352,16 +352,16 @@ if [ \${#SELECTED_CATEGORIES[@]} -gt 0 ]; then
     for cat in "\${SELECTED_CATEGORIES[@]}"; do
         case \$cat in
             1)
-                git clone https://github.com/six2dez/reconftw.git || true
-                git clone https://github.com/1N3/Sn1per.git || true
+                git clone https://github.com/six2dez/reconftw.git 2>/dev/null || true
+                git clone https://github.com/1N3/Sn1per.git 2>/dev/null || true
                 ;;
             2)
-                git clone https://github.com/laramies/theHarvester.git || true
-                git clone https://github.com/lanmaster53/recon-ng.git || true
+                git clone https://github.com/laramies/theHarvester.git 2>/dev/null || true
+                git clone https://github.com/lanmaster53/recon-ng.git 2>/dev/null || true
                 ;;
             3)
-                git clone https://github.com/projectdiscovery/nuclei-templates.git || true
-                git clone https://github.com/maurosoria/dirsearch.git || true
+                git clone https://github.com/projectdiscovery/nuclei-templates.git 2>/dev/null || true
+                git clone https://github.com/maurosoria/dirsearch.git 2>/dev/null || true
                 ;;
             4)
                 git clone https://github.com/swisskyrepo/PayloadsAllTheThings.git || true
